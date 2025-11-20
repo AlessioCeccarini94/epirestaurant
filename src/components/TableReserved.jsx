@@ -41,6 +41,7 @@ class TableReserved extends Component {
         </Row>
         <Row>
           <Col>
+            {/* SHORT CIRCUIT  */}
             {this.state.loading && (
               <div className="text-center">
                 <Spinner animation="border" />
