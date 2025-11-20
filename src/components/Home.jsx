@@ -1,7 +1,7 @@
 import { Container, Row, Col } from "react-bootstrap"
 import Carousel from "react-bootstrap/Carousel"
 import pastaciutte from "../data/menù.json"
-import ListGroup from "react-bootstrap/ListGroup"
+import PastaReview from "./PastaPreview"
 import { Component } from "react"
 class Home extends Component {
   state = {
@@ -13,7 +13,9 @@ class Home extends Component {
         <Row className="justify-content-center">
           <Col xs={12} md={6} lg={4}>
             <Carousel
-              onSlide={(i) => this.setState({ activePasta: pastaciutte[i] })}
+              onSlid={(i) => {
+                this.setState({ activePasta: pastaciutte[i] })
+              }}
             >
               {pastaciutte.map((pasta) => {
                 return (
@@ -23,7 +25,7 @@ class Home extends Component {
                       className="w-100"
                     />
                     <Carousel.Caption>
-                      <h3>{pasta.name}l</h3>
+                      <h3>{pasta.name}</h3>
                       <p>{pasta.description}</p>
                     </Carousel.Caption>
                   </Carousel.Item>
@@ -33,14 +35,8 @@ class Home extends Component {
           </Col>
         </Row>
         <Row className="justify-content-center">
-          <Col xs={12} md={6} lg={4}>
-            <ListGroup>
-              {this.state.activePasta.comments.map((c) => {
-                return <ListGroup.Item>{c.comment}</ListGroup.Item>
-              })}
-              <ListGroup.Item>Cras justo odio</ListGroup.Item>
-            </ListGroup>
-          </Col>
+          <Col xs={12} md={6} lg={4}></Col>
+          <PastaReview pasta={this.state.activePasta} />
         </Row>
       </Container>
     )
