@@ -1,7 +1,7 @@
 import { Container, Row, Col } from "react-bootstrap"
 import Carousel from "react-bootstrap/Carousel"
 import pastaciutte from "../data/menù.json"
-import PastaReview from "./PastaPreview"
+import PastaReview from "./PastaReview"
 import { Component } from "react"
 class Home extends Component {
   state = {
