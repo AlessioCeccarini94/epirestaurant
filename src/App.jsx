@@ -3,14 +3,20 @@ import RestaurantNavbar from "./components/RestaurantNavbar"
 import Home from "./components/Home"
 import Reservation from "./components/Reservation"
 import TableReserved from "./components/TableReserved"
+import NotFound from "./components/NotFound"
+import { BrowserRouter, Routes, Route } from "react-router-dom"
+
 function App() {
   return (
-    <>
-      <RestaurantNavbar illuminaLink="Home" />
-      <TableReserved />
-      <Reservation />
-      <Home />
-    </>
+    <BrowserRouter>
+      <RestaurantNavbar /> {/*  illuminaLink="Home"  */}
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/prenotazioni" element={<TableReserved />} />
+        <Route path="/prenota" element={<Reservation />} />
+        <Route path="/*" element={<NotFound />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 

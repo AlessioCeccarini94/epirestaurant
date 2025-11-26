@@ -34,20 +34,20 @@ class TableReserved extends Component {
   render() {
     return (
       <Container>
-        <Row className="justify-content-center text-center">
-          <Col xs={12} md={6} lg={4}>
-            <h2>PRENOTAZIONI</h2>
+        <Row className="justify-content-center my-3">
+          <Col xs={12} md={6}>
+            <h2 className="text-center">PRENOTAZIONI</h2>
           </Col>
         </Row>
-        <Row>
-          <Col>
+        <Row className="justify-content-center my-3">
+          <Col xs={12} md={6}>
             {/* SHORT CIRCUIT  */}
             {this.state.loading && (
               <div className="text-center">
                 <Spinner animation="border" />
               </div>
             )}
-            <ListGroup>
+            <ListGroup className="text-center">
               {this.state.prenotazioni.map((prenotazione) => {
                 return (
                   <ListGroup.Item key={prenotazione._id}>

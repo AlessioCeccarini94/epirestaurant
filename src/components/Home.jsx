@@ -11,7 +11,7 @@ class Home extends Component {
     return (
       <Container className="mt-3">
         <Row className="justify-content-center">
-          <Col xs={12} md={6} lg={4}>
+          <Col xs={12} md={6} lg={4} className="d-flex justify-content-center">
             <Carousel
               onSlid={(i) => {
                 this.setState({ activePasta: pastaciutte[i] })
@@ -21,7 +21,7 @@ class Home extends Component {
                 return (
                   <Carousel.Item key={pasta.id}>
                     <img
-                      src="https://placebear.com/300/300"
+                      src="https://placebear.com/500/500"
                       className="w-100"
                     />
                     <Carousel.Caption>
@@ -35,8 +35,9 @@ class Home extends Component {
           </Col>
         </Row>
         <Row className="justify-content-center">
-          <Col xs={12} md={6} lg={4}></Col>
-          <PastaReview pasta={this.state.activePasta} />
+          <Col xs={12} md={8}>
+            <PastaReview pasta={this.state.activePasta} />
+          </Col>
         </Row>
       </Container>
     )

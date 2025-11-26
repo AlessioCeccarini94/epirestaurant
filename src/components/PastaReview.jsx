@@ -2,10 +2,10 @@ import { ListGroup } from "react-bootstrap"
 
 const PastaReview = function (props) {
   return (
-    <ListGroup>
+    <ListGroup className="text-center">
       {props.pasta.comments.map((c) => {
         return (
-          <ListGroup.Item key={c.id}>
+          <ListGroup.Item className="mx-auto w-50 " key={c.id}>
             {c.comment}|{c.author}
           </ListGroup.Item>
         )
