@@ -33,33 +33,36 @@ class TableReserved extends Component {
   }
   render() {
     return (
-      <Container>
-        <Row className="justify-content-center my-3">
-          <Col xs={12} md={6}>
-            <h2 className="text-center">PRENOTAZIONI</h2>
-          </Col>
-        </Row>
-        <Row className="justify-content-center my-3">
-          <Col xs={12} md={6}>
-            {/* SHORT CIRCUIT  */}
-            {this.state.loading && (
-              <div className="text-center">
-                <Spinner animation="border" />
-              </div>
-            )}
-            <ListGroup className="text-center">
-              {this.state.prenotazioni.map((prenotazione) => {
-                return (
-                  <ListGroup.Item key={prenotazione._id}>
-                    {prenotazione.name} per {prenotazione.numberOfPeople}{" "}
-                    persone
-                  </ListGroup.Item>
-                )
-              })}
-            </ListGroup>
-          </Col>
-        </Row>
-      </Container>
+      <>
+        <title>Back Office</title>
+        <Container>
+          <Row className="justify-content-center my-3">
+            <Col xs={12} md={6}>
+              <h2 className="text-center">PRENOTAZIONI</h2>
+            </Col>
+          </Row>
+          <Row className="justify-content-center my-3">
+            <Col xs={12} md={6}>
+              {/* SHORT CIRCUIT  */}
+              {this.state.loading && (
+                <div className="text-center">
+                  <Spinner animation="border" />
+                </div>
+              )}
+              <ListGroup className="text-center">
+                {this.state.prenotazioni.map((prenotazione) => {
+                  return (
+                    <ListGroup.Item key={prenotazione._id}>
+                      {prenotazione.name} per {prenotazione.numberOfPeople}{" "}
+                      persone
+                    </ListGroup.Item>
+                  )
+                })}
+              </ListGroup>
+            </Col>
+          </Row>
+        </Container>
+      </>
     )
   }
 }

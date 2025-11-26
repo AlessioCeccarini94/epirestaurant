@@ -34,6 +34,24 @@ const RestaurantNavbar = () => {
             </Link>
             <Link
               className={
+                location.pathname === "/menu" ? "nav-link active" : "nav-link"
+              }
+              to="/menu"
+            >
+              Menu
+            </Link>
+            <Link
+              className={
+                location.pathname === "/details"
+                  ? "nav-link active"
+                  : "nav-link"
+              }
+              to="/details"
+            >
+              Dettagli
+            </Link>
+            <Link
+              className={
                 location.pathname === "/prenotazioni"
                   ? "nav-link active"
                   : "nav-link"
